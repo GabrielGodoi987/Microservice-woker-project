@@ -15,4 +15,8 @@ public class WorkerService {
     public List<Worker> findAll() {
         return this.workerRepository.findAll();
     }
+
+    public Worker findOne(Long id){
+        return this.workerRepository.findById(id).orElseThrow(RuntimeException::new);
+    }
 }
